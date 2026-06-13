@@ -1,93 +1,170 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boréal Endurance</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-        }
+<title>Boréal Endurance</title>
 
-        header {
-            background-color: #0f3b2e;
-            color: white;
-            padding: 20px;
-        }
+<style>
 
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+header {
+    background-color: #0f3b2e;
+    padding: 20px 40px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #f4f7f5;
-        }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: auto;
-        }
+.logo {
+    width: 70px;
+    height: auto;
+}
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
 
-        .cta {
-            text-align: center;
-        }
+.boreal {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
 
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #0f3b2e;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+.endurance {
+    color: #a7d8b8;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
 
-        footer {
-            background-color: #0f3b2e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a7d8b8;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f4f7f5;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.cta {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0f3b2e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #14513f;
+}
+
+footer {
+    background-color: #0f3b2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+</style>
 
 </head>
+
 <body>
 
 <header>
 
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="apropos.html">À propos</a>
-        <a href="mission.html">Mission</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-container">
+
+        <div class="brand">
+
+            <img src="logo.png" alt="Boréal Endurance" class="logo">
+
+            <div class="brand-text">
+                <span class="boreal">Boréal</span>
+                <span class="endurance">Endurance</span>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="mission.html">Mission</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
 
 </header>
 
@@ -150,4 +227,3 @@
 
 </body>
 </html>
-```
