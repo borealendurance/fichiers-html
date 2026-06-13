@@ -16,11 +16,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-
 header {
     background-color: #0b4a3a;
-    padding: 12px 40px;
+    padding: 18px 50px;
 }
 
 .header-container {
@@ -32,7 +30,7 @@ header {
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .logo {
@@ -40,48 +38,36 @@ header {
     height: auto;
 }
 
-.brand-name {
+.brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1;
+    line-height: 1.05;
 }
 
-.brand-boreal {
+.brand-text div {
     color: white;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-}
-
-.brand-endurance {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 4px;
 }
 
 nav {
     display: flex;
-    gap: 32px;
+    gap: 35px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding-bottom: 7px;
+    padding-bottom: 8px;
 }
 
 nav a.active {
     border-bottom: 4px solid #9fd26c;
 }
 
-/* HERO */
-
 .hero {
-    background-image: linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.35)
-    ), url("hero.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("hero.jpg");
     background-size: cover;
     background-position: center;
     min-height: 650px;
@@ -94,14 +80,15 @@ nav a.active {
     max-width: 600px;
 }
 
-.hero h1 {
+.hero-title {
     color: white;
-    font-size: 4.5rem;
+    font-size: 4.6rem;
+    font-weight: bold;
     line-height: 1.05;
     margin-bottom: 35px;
 }
 
-.hero h1 span {
+.hero-title span {
     display: block;
 }
 
@@ -137,8 +124,6 @@ nav a.active {
     border-radius: 6px;
 }
 
-/* CONTENT */
-
 .content {
     max-width: 1000px;
     margin: auto;
@@ -170,11 +155,11 @@ footer {
     <div class="header-container">
 
         <div class="brand">
-            <img src="logo.png" alt="Logo Boréal Endurance" class="logo">
+            <img src="logo.png" alt="Boréal Endurance" class="logo">
 
-            <div class="brand-name">
-                <div class="brand-boreal">Boréal</div>
-                <div class="brand-endurance">Endurance</div>
+            <div class="brand-text">
+                <div>Boréal</div>
+                <div>Endurance</div>
             </div>
         </div>
 
@@ -192,10 +177,10 @@ footer {
 <section class="hero">
     <div class="hero-content">
 
-        <h1>
+        <div class="hero-title">
             <span>Boréal</span>
             <span>Endurance</span>
-        </h1>
+        </div>
 
         <div class="green-line"></div>
 
