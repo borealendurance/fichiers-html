@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,30 @@
 
 <style>
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    line-height: 1.6;
     color: #333;
 }
 
+/* =======================
+   HEADER
+======================= */
+
 header {
-    background-color: #0f3b2e;
-    padding: 20px 40px;
+    background-color: #0b4a3a;
+    padding: 15px 40px;
 }
 
 .header-container {
+    max-width: 1200px;
+    margin: auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,62 +45,109 @@ header {
 }
 
 .logo {
-    width: 70px;
+    width: 85px;
     height: auto;
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1;
 }
 
-.boreal {
+.brand-text .boreal {
     color: white;
     font-size: 2rem;
     font-weight: bold;
+    line-height: 1;
 }
 
-.endurance {
-    color: #a7d8b8;
+.brand-text .endurance {
+    color: #9fd26c;
     font-size: 1rem;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     margin-top: 4px;
 }
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 8px;
 }
 
 nav a:hover {
-    color: #a7d8b8;
+    color: #9fd26c;
 }
 
+nav a.active {
+    border-bottom: 3px solid #9fd26c;
+}
+
+/* =======================
+   HERO
+======================= */
+
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f4f7f5;
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    margin-left: 60px;
+    max-width: 600px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 40px;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: auto;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
+
+.hero-subtitle {
+    color: #9fd26c;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #9fd26c;
+    color: #0b4a3a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 28px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* =======================
+   CONTENT
+======================= */
 
 section {
     max-width: 1000px;
@@ -96,30 +155,29 @@ section {
     padding: 60px 20px;
 }
 
-.cta {
-    text-align: center;
+section h2 {
+    margin-bottom: 20px;
+    color: #0b4a3a;
 }
 
-.button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #0f3b2e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+section p {
+    margin-bottom: 20px;
 }
 
-.button:hover {
-    background-color: #14513f;
-}
+/* =======================
+   FOOTER
+======================= */
 
 footer {
-    background-color: #0f3b2e;
+    background-color: #0b4a3a;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
 }
+
+/* =======================
+   MOBILE
+======================= */
 
 @media (max-width: 768px) {
 
@@ -133,6 +191,21 @@ footer {
         justify-content: center;
     }
 
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        margin: 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
 }
 
 </style>
@@ -157,7 +230,7 @@ footer {
         </div>
 
         <nav>
-            <a href="index.html">Accueil</a>
+            <a href="index.html" class="active">Accueil</a>
             <a href="apropos.html">À propos</a>
             <a href="mission.html">Mission</a>
             <a href="services.html">Services</a>
@@ -170,16 +243,27 @@ footer {
 
 <section class="hero">
 
-    <h1>Boréal Endurance</h1>
+    <div class="hero-content">
 
-    <p>
-        L'endurance n'est pas une question de souffrance.
-        C'est une question de constance.
-    </p>
+        <h1>
+            Boréal<br>
+            Endurance
+        </h1>
 
-    <a class="button" href="contact.html">
-        Me contacter
-    </a>
+        <p>
+            L'endurance se construit<br>
+            dans la constance.
+        </p>
+
+        <div class="hero-subtitle">
+            Coaching personnalisé en course à pied et triathlon.
+        </div>
+
+        <a href="contact.html" class="button">
+            Contactez-nous
+        </a>
+
+    </div>
 
 </section>
 
@@ -188,42 +272,21 @@ footer {
     <h2>Coaching personnalisé en course à pied et triathlon</h2>
 
     <p>
-        J'accompagne les adultes qui souhaitent progresser en endurance
-        grâce à une approche fondée sur la science, la communication,
-        le réalisme et la constance.
+        J'accompagne les adultes qui souhaitent progresser en endurance grâce à une approche fondée sur la science, la communication, le réalisme et la constance.
     </p>
 
     <p>
-        Que vous prépariez votre première course ou votre prochain défi,
-        l'objectif est de construire des habitudes durables qui vous
-        permettront de progresser tout en respectant votre réalité.
-    </p>
-
-</section>
-
-<section>
-
-    <h2>Pourquoi Boréal Endurance ?</h2>
-
-    <p>
-        Les progrès les plus importants ne viennent pas d'une séance
-        exceptionnelle ou d'un programme miracle.
-    </p>
-
-    <p>
-        Ils naissent de milliers de petites décisions répétées
-        jour après jour.
+        Que vous prépariez votre première course ou votre prochain défi, l'objectif est de construire des habitudes durables qui vous permettront de progresser tout en respectant votre réalité.
     </p>
 
 </section>
 
 <footer>
 
-    <p>
-        © 2026 Boréal Endurance
-    </p>
+    © 2026 Boréal Endurance
 
 </footer>
 
 </body>
+
 </html>
