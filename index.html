@@ -14,11 +14,12 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: #333;
 }
 
 header {
     background-color: #0b4a3a;
-    padding: 25px 50px;
+    padding: 24px 50px;
 }
 
 nav {
@@ -39,7 +40,10 @@ nav a.active {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("banniere.jpg");
+    background-image: linear-gradient(
+        rgba(0,0,0,0.38),
+        rgba(0,0,0,0.38)
+    ), url("banniere.jpg");
     background-size: cover;
     background-position: center;
     min-height: 650px;
@@ -49,18 +53,18 @@ nav a.active {
 
 .hero-content {
     margin-left: 70px;
-    max-width: 750px;
+    max-width: 850px;
 }
 
 .hero-brand {
     display: flex;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 35px;
+    gap: 28px;
+    margin-bottom: 32px;
 }
 
 .hero-logo {
-    width: 120px;
+    width: 135px;
     height: auto;
 }
 
@@ -129,6 +133,47 @@ footer {
     text-align: center;
     padding: 25px;
 }
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero-content {
+        margin: 35px;
+    }
+
+    .hero-brand {
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .hero-logo {
+        width: 85px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
 </style>
 </head>
 
@@ -148,7 +193,7 @@ footer {
     <div class="hero-content">
 
         <div class="hero-brand">
-            <img src="logo.png" alt="Logo Boréal Endurance" class="hero-logo">
+            <img src="logo2.png" alt="Logo Boréal Endurance" class="hero-logo">
 
             <div class="hero-title">
                 <span>Boréal</span>
@@ -181,6 +226,18 @@ footer {
 
     <p>
         Que vous prépariez votre première course ou votre prochain défi, l'objectif est de construire des habitudes durables qui vous permettront de progresser tout en respectant votre réalité.
+    </p>
+</section>
+
+<section class="content">
+    <h2>Pourquoi Boréal Endurance ?</h2>
+
+    <p>
+        Les progrès les plus importants ne viennent pas d'une séance exceptionnelle ou d'un programme miracle.
+    </p>
+
+    <p>
+        Ils naissent de milliers de petites décisions répétées jour après jour.
     </p>
 </section>
 
