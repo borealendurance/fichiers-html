@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
 <title>Boréal Endurance</title>
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -20,19 +18,16 @@ body {
     color: #333;
 }
 
-/* =======================
-   HEADER
-======================= */
+/* HEADER */
 
 header {
     background-color: #0b4a3a;
-    padding: 15px 40px;
+    padding: 12px 30px;
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,45 +36,45 @@ header {
 .brand {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo {
-    width: 85px;
+    width: 55px;
     height: auto;
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
-}
-
-.brand-text .boreal {
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
     line-height: 1;
 }
 
-.brand-text .endurance {
+.boreal {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.endurance {
     color: #9fd26c;
-    font-size: 1rem;
+    font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    padding-bottom: 8px;
+    font-size: 0.9rem;
+    padding-bottom: 6px;
 }
 
 nav a:hover {
@@ -90,30 +85,30 @@ nav a.active {
     border-bottom: 3px solid #9fd26c;
 }
 
-/* =======================
-   HERO
-======================= */
+/* HERO */
 
 .hero {
-    background-image: url("hero.jpg");
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+    ), url("hero.jpg");
     background-size: cover;
     background-position: center;
     min-height: 650px;
-
     display: flex;
     align-items: center;
 }
 
 .hero-content {
     margin-left: 60px;
-    max-width: 600px;
+    max-width: 520px;
 }
 
 .hero h1 {
     color: white;
     font-size: 4rem;
     line-height: 1.1;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .hero p {
@@ -145,28 +140,25 @@ nav a.active {
     opacity: 0.9;
 }
 
-/* =======================
-   CONTENT
-======================= */
+/* CONTENT */
 
-section {
+section.content {
     max-width: 1000px;
     margin: auto;
     padding: 60px 20px;
 }
 
-section h2 {
+section.content h2 {
     margin-bottom: 20px;
     color: #0b4a3a;
 }
 
-section p {
+section.content p {
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-/* =======================
-   FOOTER
-======================= */
+/* FOOTER */
 
 footer {
     background-color: #0b4a3a;
@@ -175,58 +167,61 @@ footer {
     padding: 25px;
 }
 
-/* =======================
-   MOBILE
-======================= */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
+    header {
+        padding: 15px 20px;
+    }
+
     .header-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 16px;
     }
 
     .hero {
-        min-height: 500px;
+        min-height: 520px;
     }
 
     .hero-content {
         margin: 30px;
+        max-width: 420px;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
 
     .hero p {
         font-size: 1.5rem;
     }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
     <div class="header-container">
 
         <div class="brand">
-
             <img src="logo.png" alt="Boréal Endurance" class="logo">
 
             <div class="brand-text">
-                <span class="boreal">Boréal</span>
-                <span class="endurance">Endurance</span>
+                <div class="boreal">Boréal</div>
+                <div class="endurance">Endurance</div>
             </div>
-
         </div>
 
         <nav>
@@ -238,11 +233,9 @@ footer {
         </nav>
 
     </div>
-
 </header>
 
 <section class="hero">
-
     <div class="hero-content">
 
         <h1>
@@ -264,10 +257,9 @@ footer {
         </a>
 
     </div>
-
 </section>
 
-<section>
+<section class="content">
 
     <h2>Coaching personnalisé en course à pied et triathlon</h2>
 
@@ -281,12 +273,23 @@ footer {
 
 </section>
 
+<section class="content">
+
+    <h2>Pourquoi Boréal Endurance ?</h2>
+
+    <p>
+        Les progrès les plus importants ne viennent pas d'une séance exceptionnelle ou d'un programme miracle.
+    </p>
+
+    <p>
+        Ils naissent de milliers de petites décisions répétées jour après jour.
+    </p>
+
+</section>
+
 <footer>
-
     © 2026 Boréal Endurance
-
 </footer>
 
 </body>
-
 </html>
