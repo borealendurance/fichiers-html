@@ -378,6 +378,39 @@ nav a:hover {
 
   color: var(--green-dark);
 }
+    .testimonial-rotator {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.testimonial-track {
+  display: inline-flex;
+  gap: 70px;
+  animation: testimonialScroll 28s linear infinite;
+}
+
+.testimonial-item {
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.testimonial-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+@keyframes testimonialScroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
   </style>
 </head>
 
@@ -436,14 +469,35 @@ peut maintenir dans le temps. Un plan adapté à vos objectifs,
       </div>
 
 <div class="testimonial-rotator">
-  <p id="testimonial-text">
-    « Grâce à une approche progressive, j’ai retrouvé le plaisir de courir. »
-  </p>
-  <span id="testimonial-author">
-    — Marie, demi-marathonienne
-  </span>
-</div>
+  <div class="testimonial-track">
 
+    <div class="testimonial-item">
+      « J'ai été suivi attentivement tout au long du processus.»
+      <span>— Grégory D., marathonien</span>
+    </div>
+
+    <div class="testimonial-item">
+      «Dominic est un entraineur passionné qui veille autant à ma santé physique que mentale »
+      <span>— Mariève C., demi-marathonienne</span>
+    </div>
+
+    <div class="testimonial-item">
+      « Dominic a cette façon de croire en vous qui agit comme un moteur. Lancez-vous! »
+      <span>— Maya V., marathonienne et triathlète, Ironman 70.3</span>
+    </div>
+
+    <div class="testimonial-item">
+      « Bien plus qu'un plan. Un encadrement intelligent et humain »
+      <span>— Simon B., marathonnien</span>
+    </div>
+
+    <div class="testimonial-item">
+      « L'entraînement, fondé sur la science, se fait dans le respect absolu de notre rythme, forces et limites »
+      <span>— Marie-Lyne B., demi-marathonienne</span>
+    </div>
+
+  </div>
+</div>
 </section>
     </section>
 
