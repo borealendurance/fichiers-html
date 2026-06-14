@@ -378,6 +378,51 @@ nav a:hover {
 
   color: var(--green-dark);
 }
+    .testimonial-rotator {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px;
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+#testimonial-text {
+  color: white;
+  font-size: clamp(1.5rem, 2.4vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 18px 0;
+}
+
+#testimonial-author {
+  display: block;
+  color: #5f7f63;
+  font-size: 1.15rem;
+  font-weight: 700;
+}.testimonial-rotator {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px;
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+#testimonial-text {
+  color: white;
+  font-size: clamp(1.5rem, 2.4vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 18px 0;
+}
+
+#testimonial-author {
+  display: block;
+  color: #5f7f63;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
   </style>
 </head>
 
@@ -437,10 +482,10 @@ peut maintenir dans le temps. Un plan adapté à vos objectifs,
 
 <div class="testimonial-rotator">
   <p id="testimonial-text">
-    « Grâce à une approche progressive, j’ai retrouvé le plaisir de courir. »
+    « J’ai été suivi attentivement tout au long du processus. »
   </p>
   <span id="testimonial-author">
-    — Marie, demi-marathonienne
+    — Grégory D., marathonien
   </span>
 </div>
 
@@ -534,7 +579,44 @@ peut maintenir dans le temps. Un plan adapté à vos objectifs,
   <footer>
     © 2026 Boréal Endurance. Tous droits réservés.
   </footer>
+<script>
+const testimonials = [
+  {
+    text: "« J’ai été suivi attentivement tout au long du processus. »",
+    author: "— Grégory D., marathonien"
+  },
+  {
+    text: "« Dominic est un entraîneur passionné qui veille autant à ma santé physique que mentale. »",
+    author: "— Mariève C., demi-marathonienne"
+  },
+  {
+    text: "« Dominic a cette façon de croire en vous qui agit comme un moteur. Lancez-vous! »",
+    author: "— Maya V., marathonienne et triathlète, Ironman 70.3"
+  },
+  {
+    text: "« Bien plus qu’un plan. Un encadrement intelligent et humain. »",
+    author: "— Simon B., marathonien"
+  }
+];
 
+let current = 0;
+
+const rotator = document.querySelector(".testimonial-rotator");
+const textEl = document.getElementById("testimonial-text");
+const authorEl = document.getElementById("testimonial-author");
+
+setInterval(() => {
+  rotator.style.opacity = "0";
+
+  setTimeout(() => {
+    current = (current + 1) % testimonials.length;
+    textEl.textContent = testimonials[current].text;
+    authorEl.textContent = testimonials[current].author;
+    rotator.style.opacity = "1";
+  }, 900);
+
+}, 5200);
+</script>
 </body>
 </html>
 <script async data-explicit-opt-in="true" data-cookie-opt-in="true" data-deployment-id="dpl_AufiMNeX4jToXv3bFkiwp2w9E5c4" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
