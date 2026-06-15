@@ -500,6 +500,38 @@ nav a:hover {
     font-size: 1rem;
     margin-bottom: 30px;
 }
+    .about-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+}
   </style>
 </head>
 
@@ -582,10 +614,27 @@ Que vous débutiez ou visiez un nouveau défi, un entraînement doit s’adapter
 <section id="apropos">
   <div class="section-inner">
 
+    <div class="about-header">
+
+  <img src="dominic-running.jpg"
+       alt="Dominic Bergeron"
+       class="about-photo">
+
+  <div>
+
     <h2 class="section-title">Mon parcours</h2>
+
     <p class="section-intro">
-  Dominic Bergeron, Ph. D.
-</p>
+      Dominic Bergeron, Ph. D.
+    </p>
+
+    <p class="section-tagline">
+      Enseignant pendant plus de 30 ans. Athlète d'endurance depuis toujours.
+    </p>
+
+  </div>
+
+</div>
 
 <p class="section-tagline">
   Enseignant pendant plus de 30 ans. Athlète d'endurance depuis toujours.
