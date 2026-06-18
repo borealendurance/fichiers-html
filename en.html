@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boréal Endurance</title>
+
+  <style>
+    :root {
+      --green: #9fbd9b;
+      --green-dark: #5f7f63;
+      --text: #1f2a24;
+      --muted: #6f7a72;
+      --bg: #f7f8f4;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 248, 244, 0.96);
+      border-bottom: 1px solid rgba(95, 127, 99, 0.18);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      width: 90px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+   nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    padding: 8px 14px;
+    border-radius: 999px;
+
+    background: transparent;
+    backdrop-filter: blur(4px);
+
+    border: 1px solid rgba(95,127,99,0.08);
+
+    transition: all 0.2s ease;
+}
+nav a:hover {
+    background: #6f8f6e;
+    color: white;
+    transform: translateY(-2px);
+}
+ 
+
+ .hero {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 28px;
+
+  background-image:
+    linear-gradient(
+     rgba(255,255,255,0.40),
+     rgba(255,255,255,0.40)
+    ),
+    url('boreal-bg.png');
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 45px;
+    align-items: center;
+    transform: translateY(-25px);
+}
+    .eyebrow {
+      color: var(--green-dark);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    max-width: 700px;
+}
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .button {
+    display: inline-block;
+    background: var(--green-dark);
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    margin-top: 24px;
+}
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+.hero-card {
+    background: rgba(235,242,234,0.25);
+    backdrop-filter: blur(10px);
+
+    padding: 18px 28px 24px 28px;
+
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(31, 42, 36, 0.08);
+    border: 1px solid rgba(95,127,99,0.12);
+
+    max-width: none;
+}
+    .hero-card h2 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+.hero h1,
+.hero h2,
+.hero p,
+.hero .eyebrow {
+  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
+}
+    section {
+      padding: 35px 28px;
+    }
+
+    .section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+#apropos {
+    padding-top: 50px;
+}
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      margin-bottom: 28px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid rgba(95, 127, 99, 0.14);
+      box-shadow: 0 10px 30px rgba(31, 42, 36, 0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      color: var(--green-dark);
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .highlight {
+      background: var(--text);
+      color: white;
+    }
+
+    .highlight .section-text {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .contact-box {
+      background: var(--white);
+      padding: 38px;
+      border-radius: 28px;
+      border: 1px solid rgba(95, 127, 99, 0.14);
+      box-shadow: 0 20px 60px rgba(31, 42, 36, 0.08);
+    }
+
+    .contact-box a {
+      color: var(--green-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 34px 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(95, 127, 99, 0.16);
+    }
+
+    @media (max-width: 820px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        width: 78px;
+        height: 78px;
+      }
+    }
+    .brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+}
+
+.brand:link,
+.brand:visited,
+.brand:hover,
+.brand:active {
+    text-decoration: none;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 0.55rem;
+    color: #1f2a24;
+    line-height: 1;
+}
+
+.brand-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.75rem;
+    color: #5f7f63;
+    margin-top: 10px;
+    margin-left: 0.70rem;
+    line-height: 1;
+}
+    section {
+    scroll-margin-top: 150px;
+}
+.testimonial-rotator {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 25px auto 0 auto;
+
+    padding: 20px 40px;
+
+    background: rgba(95,127,99,0.12);
+    backdrop-filter: blur(4px);
+
+    border: 1px solid rgba(95,127,99,0.18);
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.testimonial-rotator p {
+  margin: 0 auto 12px auto;
+  max-width: 800px;
+
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.6;
+
+  text-align: center;
+  color: var(--text);
+}
+
+.testimonial-rotator span {
+  display: block;
+
+  text-align: center;
+
+  color: var(--green-dark);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+  color: var(--green-dark);
+}
+   
+#testimonial-text {
+    width: 100%;
+    color: #f8f8f8;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto 12px auto;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+#testimonial-author {
+  display: block;
+  color: #5f7f63;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+#testimonial-content {
+    opacity: 1;
+    transition: opacity 1s ease;
+}    
+#testimonial-author {
+  display: block;
+  color: #5f7f63;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+ 
+#testimonial-content {
+    width: 100%;
+    text-align: center;
+}
+
+#testimonial-author {
+    width: 100%;
+    text-align: center;
+}
+   .hero-card {
+  background: rgba(235, 242, 234, 0.12) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+
+  padding: 18px 28px 24px 28px !important;
+
+  border-radius: 28px;
+  border: 1px solid rgba(95,127,99,0.10) !important;
+}
+
+.hero-card h2 {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+    .section-intro {
+    color: #5f7f63;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+    .stats-row {
+    display: flex;
+    gap: 18px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 180px;
+
+    padding: 20px;
+
+    background: rgba(235,242,234,0.55);
+    backdrop-filter: blur(8px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(95,127,99,0.15);
+
+    text-align: center;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 2rem;
+    color: #5f7f63;
+}
+
+.stat-box span {
+    font-size: 0.9rem;
+}
+   .closing-quote {
+    margin-top: 50px;
+
+    text-align: center;
+
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #5f7f63;
+
+    padding: 40px;
+
+    background: rgba(235,242,234,0.40);
+
+    border-radius: 20px;
+}
+    .section-intro {
+    color: #5f7f63;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-tagline {
+    color: #6f7d73;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+    .about-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+  <div class="nav-container">
+
+    <a href="#accueil" class="brand">
+      <img src="logo_transparent1.png" alt="Boréal Endurance" class="logo" />
+
+      <div class="brand-text">
+        <div class="brand-main">BORÉAL</div>
+        <div class="brand-sub">ENDURANCE</div>
+      </div>
+    </a>
+
+    <nav>
+<a href="#accueil">Accueil</a>
+<a href="#approche">Approche</a>
+<a href="#apropos">Mon parcours</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+  <main>
+
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+       <div>
+  <div class="eyebrow">Course à pied · Triathlon · Endurance</div>
+
+<h1>
+  Une approche réaliste.<br>
+  Des résultats durables.
+</h1>
+
+<p style="margin-bottom:12px; color:#5f7f63; font-weight:600;">
+ La science au service de votre progression.
+</p>
+
+</div>
+
+      <div class="hero-card">
+ <h2>Une progression à votre rythme.</h2>
+
+<p>
+Les meilleurs résultats viennent d’un entraînement que l’on peut maintenir dans le temps.
+Un plan adapté à vos objectifs, à votre expérience et à votre réalité.
+</p>
+
+<p>
+Que vous débutiez ou visiez un nouveau défi, un entraînement doit s’adapter à vous.
+</p>
+</div>
+      </div>
+      </div>
+
+<div class="testimonial-rotator">
+
+  <div id="testimonial-content">
+
+    <p id="testimonial-text">
+      « J’ai été suivi attentivement tout au long du processus. »
+    </p>
+
+    <span id="testimonial-author">
+      — Grégory D., marathonien
+    </span>
+
+  </div>
+
+</div>
+
+</section>
+    </section>
+
+    <section id="approche">
+      <div class="section-inner">
+        <h2 class="section-title">Mon approche</h2>
+
+        <p class="section-text">
+          Progresser en endurance ne demande pas d’être parfait. Il faut surtout
+          être régulier, patient et bien guidé.
+        </p>
+
+        <p class="section-text">
+          Mon rôle est de vous aider à vous entraîner avec plus de clarté :
+          savoir quoi faire, pourquoi le faire, quand récupérer et comment
+          ajuster le plan quand la vie normale se mêle de vos ambitions.
+        </p>
+
+        <p class="section-text">
+          L’objectif est simple : bâtir une progression solide, limiter les
+          blessures et rendre l’entraînement compatible avec votre réalité.
+        </p>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="section-inner">
+        <h2 class="section-title">Pas besoin d’en faire plus. Il faut souvent mieux faire.</h2>
+        <p class="section-text">
+          Un bon plan respecte votre niveau, votre énergie, votre horaire et vos objectifs.
+          L’endurance se construit une séance à la fois.
+        </p>
+      </div>
+    </section>
+<section id="apropos">
+  <div class="section-inner">
+
+    <div class="about-header">
+
+  <img src="dominic-running.jpg"
+       alt="Dominic Bergeron"
+       class="about-photo">
+
+  <div>
+
+    <h2 class="section-title">Mon parcours</h2>
+
+    <p class="section-intro">
+      Dominic Bergeron, Ph.D.
+    </p>
+
+    <p class="section-tagline">
+      Éducateur et athlète d'endurance.
+    </p>
+
+  </div>
+
+</div>
+
+
+    <div class="stats-row">
+  <div class="stat-box">
+    <strong>30+</strong>
+    <span>années d'enseignement</span>
+  </div>
+
+  <div class="stat-box">
+    <strong>4</strong>
+    <span>Ironman complétés</span>
+  </div>
+
+  <div class="stat-box">
+    <strong>100%</strong>
+    <span>approche personnalisée</span>
+  </div>
+</div>
+    <p class="section-text">
+    Après plus de 30 ans en enseignement, je poursuis aujourd'hui une autre passion : l'endurance.
+</p>
+
+<p class="section-text">
+    Au fil des années, j'ai appris qu'il n'existe pas de recette universelle. Chaque personne possède ses forces, ses défis et son propre rythme. Cette réalité est aussi vraie en entraînement qu'en apprentissage.
+</p>
+
+<p class="section-text">
+    La meilleure forme de ma vie n'est pas arrivée dans la vingtaine. Elle est le résultat de milliers de petites décisions répétées avec constance.
+</p>
+
+<p class="section-text">
+    Marathons, triathlons, demi-Ironman et Ironman m'ont appris une leçon simple : les progrès durables reposent davantage sur la constance que sur la motivation.
+</p>
+
+<p class="section-text">
+    C'est cette philosophie qui guide Boréal Endurance.
+</p>
+
+<p class="section-text">
+    Que votre objectif soit de compléter votre première course, d'améliorer vos performances ou simplement de retrouver le plaisir de courir, je serais heureux de vous accompagner dans votre parcours.
+</p>
+
+   <div class="closing-quote">
+    L'endurance n'est pas une question de souffrance.
+    <br>
+    <span>C'est une question de constance.</span>
+</div>
+
+  </div>
+</section>
+    <section id="services">
+      <div class="section-inner">
+        <h2 class="section-title">Services</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Plan de course personnalisé</h3>
+            <p>
+              Pour préparer une course, reprendre l’entraînement ou progresser
+              avec une structure claire et adaptée.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Plan de triathlon personnalisé</h3>
+            <p>
+              Pour organiser la natation, le vélo et la course sans transformer
+              votre vie en casse-tête.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Suivi mensuel</h3>
+            <p>
+              Pour celles et ceux qui veulent un accompagnement plus serré :
+              ajustements, échanges réguliers et suivi de progression.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-box">
+          <p class="section-text">
+            Vous voulez commencer, poser une question ou voir si mon approche
+            correspond à vos besoins?
+          </p>
+
+          <p class="section-text">
+            Écrivez-moi à :
+            <a href="mailto:borealendurance@gmail.com">borealendurance@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Boréal Endurance. Tous droits réservés.
+  </footer>
+<script>
+const testimonials = [
+  {
+    text: "« J’ai été suivi attentivement tout au long du processus. »",
+    author: "— Grégory D., marathonien"
+  },
+  {
+    text: "« Dominic est un entraineur passionné qui veille à ma santé physique et mentale. »",
+    author: "— Mariève C., demi-marathonienne"
+  },
+  {
+    text: "« Dominic a cette façon de croire en vous qui agit comme un moteur. Lancez-vous! »",
+    author: "— Maya V., marathonienne et triathlète, Ironman 70.3"
+  },
+  {
+    text: "« Bien plus qu’un plan. Un encadrement intelligent et humain. »",
+    author: "— Simon B., marathonien"
+  },
+  {
+    text: "« Dominic est un guide qui nous permet de progresser dans notre discipline. »",
+    author: "— Marie-Lyne B., demi-marathonienne"
+  }
+];
+
+let current = 0;
+
+const rotator = document.getElementById("testimonial-content");
+const textEl = document.getElementById("testimonial-text");
+const authorEl = document.getElementById("testimonial-author");
+
+setInterval(() => {
+  rotator.style.opacity = "0";
+
+  setTimeout(() => {
+    current = (current + 1) % testimonials.length;
+    textEl.textContent = testimonials[current].text;
+    authorEl.textContent = testimonials[current].author;
+    rotator.style.opacity = "1";
+  }, 900);
+
+}, 5200);
+</script>
+</body>
+</html>
+<script async data-explicit-opt-in="true" data-cookie-opt-in="true" data-deployment-id="dpl_AufiMNeX4jToXv3bFkiwp2w9E5c4" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
